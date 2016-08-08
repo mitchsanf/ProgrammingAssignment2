@@ -1,7 +1,7 @@
 ## The following two functions provide the functionality for an augmented
 #    matrix that can cache the value of its inverse. The matrix is really a set
 #    of function calls and two local variables, but it functions as a matrix. If the
-#    function cacheInvert is called on a special matrix, it will return the inverse of
+#    function cacheSolve is called on a special matrix, it will return the inverse of
 #    the special matrix
 
 ## makeCacheMatrix is a collection of functions for a special
@@ -23,11 +23,11 @@ makeCacheMatrix <- function(x = matrix()) {
         getinverse = getinverse)
 }
 
-## cacheInvert returns the inverse of a matrix. If the inverse has never been
+## cacheSolve returns the inverse of a matrix. If the inverse has never been
 #    calculated, or if the matrix has been changed, it does the full calculation
 #    and stores the result. Otherwise, it returns the cached value
 
-cacheInvert <- function(x) {
+cacheSolve <- function(x) {
     inv <- x$getinverse()
     if(!is.null(inv)){
         message("getting cached data")
